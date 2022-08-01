@@ -12,6 +12,14 @@ const cardCafeteria = document.querySelector('#cardCafeteria')
 const cardFire = document.querySelector('#cardFire')
 const buttonTimerUp = document.querySelector('.timerUp')
 const buttonTimerDown = document.querySelector('.timerDown')
+const buttonLightMode = document.querySelector('.light-mode')
+const buttonDarkMode = document.querySelector('.dark-mode')
+const volumeSlider = document.querySelector('.slider')
+const volumeSliderForest = document.querySelector('#sliderForest')
+const volumeSliderRain = document.querySelector('#sliderRain')
+const volumeSliderCafeteria = document.querySelector('#sliderCafeteria')
+const volumeSliderFire = document.querySelector('#sliderFire')
+const volumeSliderSound = document.querySelector('#sliderBG')
 
 export {
   buttonPlay,
@@ -27,5 +35,13 @@ export {
   cardCafeteria,
   cardFire,
   buttonTimerUp,
-  buttonTimerDown
+  buttonTimerDown,
+  buttonDarkMode,
+  buttonLightMode,
+  volumeSliderForest,
+  volumeSliderRain,
+  volumeSliderCafeteria,
+  volumeSliderFire,
+  volumeSlider,
+  volumeSliderSound
 }

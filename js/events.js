@@ -12,7 +12,9 @@ import {
   buttonTimerUp,
   buttonTimerDown,
   minutesDisplay,
-  secondsDisplay
+  secondsDisplay,
+  buttonDarkMode,
+  buttonLightMode
 } from './elements.js'
 
 export default function ({ controls, timer, sound }) {
@@ -129,5 +131,49 @@ export default function ({ controls, timer, sound }) {
     timer.updateDisplay(newMinutes, seconds)
     timer.updateMinutes(newMinutes)
     sound.pressButton()
+  })
+
+  buttonDarkMode.addEventListener('click', function () {
+    buttonLightMode.classList.remove('hide')
+    buttonDarkMode.classList.add('hide')
+    buttonLightMode.classList.remove('dark')
+    buttonDarkMode.classList.remove('dark')
+    buttonPause.classList.remove('dark')
+    buttonPlay.classList.remove('dark')
+    buttonSet.classList.remove('dark')
+    buttonSoundOff.classList.remove('dark')
+    buttonSoundOn.classList.remove('dark')
+    buttonStop.classList.remove('dark')
+    cardForest.classList.remove('dark')
+    cardRain.classList.remove('dark')
+    cardCafeteria.classList.remove('dark')
+    cardFire.classList.remove('dark')
+    buttonTimerUp.classList.remove('dark')
+    buttonTimerDown.classList.remove('dark')
+    minutesDisplay.classList.remove('dark')
+    secondsDisplay.classList.remove('dark')
+    document.body.classList.remove('dark-body')
+  })
+
+  buttonLightMode.addEventListener('click', function () {
+    buttonLightMode.classList.add('hide')
+    buttonDarkMode.classList.remove('hide')
+    buttonLightMode.classList.add('dark')
+    buttonDarkMode.classList.add('dark')
+    buttonPause.classList.add('dark')
+    buttonPlay.classList.add('dark')
+    buttonSet.classList.add('dark')
+    buttonSoundOff.classList.add('dark')
+    buttonSoundOn.classList.add('dark')
+    buttonStop.classList.add('dark')
+    cardForest.classList.add('dark')
+    cardRain.classList.add('dark')
+    cardCafeteria.classList.add('dark')
+    cardFire.classList.add('dark')
+    buttonTimerUp.classList.add('dark')
+    buttonTimerDown.classList.add('dark')
+    minutesDisplay.classList.add('dark')
+    secondsDisplay.classList.add('dark')
+    document.body.classList.add('dark-body')
   })
 }

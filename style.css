@@ -6,23 +6,29 @@
 
 :root {
   --bg-color: white;
+  --darkMode-bg-color: #121214;
 
-  --base-color: #323238;
+  --light-card-color: hsl(240, 9%, 89%);
+  --dark-card-color: hsl(240, 6%, 17%);
+  --light-activated-card-color: #02799d;
+  --dark-activated-card-color: #0a3442;
+  --base-color: #29292e;
   --bg-primary-light: hsla(var(--base-color), 100%, 63%, 0.13);
   --primary-color: hsl(var(--base-color), 100%, 63%);
 
-  --text-color: #323238;
+  --text-color: #29292e;
+  --darkMode-text-color: white;
 
   font-size: 62.5%;
 }
 
 body {
+  transition: 0.47s ease-out;
   background-color: var(--bg-color);
   color: var(--text-color);
 
   font-family: 'Roboto', sans-serif;
 
-  display: grid;
   min-height: 100vh;
 }
 
@@ -38,6 +44,7 @@ button {
 }
 
 svg path {
+  transition: all 0.57s ease-out;
   fill: var(--base-color);
 }
 
@@ -52,7 +59,9 @@ main {
   justify-items: center;
   flex-direction: row;
 }
-
+#timer span {
+  transition: all 0.27s ease-in;
+}
 #timer {
   font-size: clamp(3rem, 3rem + 10vw, 11.6rem);
   display: flex;
@@ -61,8 +70,7 @@ main {
   margin-bottom: 1.6rem;
 }
 
-#controls,
-#auxcontrols {
+#controls {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,9 +79,17 @@ main {
   border-radius: 9999px;
 }
 
+#auxcontrols {
+  display: flex;
+  align-items: flex-start;
+  /* gap: 2rem; */
+  border-radius: 9999px;
+  justify-content: flex-start;
+}
+
 .card {
   transition: all 0.27s ease-out;
-  background-color: #e1e1e6;
+  background-color: var(--light-card-color);
   width: 13.8rem;
   height: 15.2rem;
   border-radius: 3.4rem;
@@ -84,14 +100,27 @@ main {
   fill: black;
 }
 
+.auxVolumeSound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .activated {
   transition: all 0.27s ease-in;
-  background-color: #02799d;
+  background-color: var(--light-activated-card-color);
 }
 
 .activated svg path {
   transition: all 0.27s ease-in;
   fill: white;
+}
+
+.activated .slider,
+.activated .slider::-webkit-slider-thumb {
+  transition: 0.27s ease-in;
+  background: white;
 }
 
 .grid {
@@ -101,4 +130,87 @@ main {
     'A B'
     'C D';
   gap: 3.2rem;
+}
+
+header {
+  padding: 6.4rem;
+}
+
+header button {
+  position: relative;
+  align-self: flex-end;
+}
+
+.grid .slidecontainer {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 5px;
+  border-radius: 5px;
+  background: black;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: 0.27s;
+  transition: opacity 0.27s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+  transition: opacity 0.27s;
+}
+
+.soundVol {
+  display: flex;
+  flex-direction: column;
+}
+
+.sliderSound {
+  margin-left: 3rem;
+}
+/* ################### DARK MODE ################### */
+
+.dark-body .card {
+  background-color: var(--dark-card-color);
+}
+
+.dark-body .activated {
+  background-color: var(--dark-activated-card-color);
+}
+
+#controls .dark,
+#auxcontrols .dark {
+  fill: white;
+}
+
+.dark svg path {
+  fill: white;
+}
+
+.dark-body {
+  transition: all 0.27s ease-in;
+  background-color: var(--darkMode-bg-color);
+}
+
+#timer .dark-body,
+.dark-body span {
+  transition: all 0.27s ease-in;
+  color: white;
+}
+
+.dark-body .slider {
+  background: white;
+}
+
+.dark-body .slider::-webkit-slider-thumb {
+  background: white;
 }

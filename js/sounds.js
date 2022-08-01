@@ -1,3 +1,13 @@
+import {
+  volumeSliderCafeteria,
+  volumeSliderFire,
+  volumeSliderForest,
+  volumeSliderRain,
+  volumeSliderSound,
+  cardCafeteria,
+  cardForest
+} from './elements.js'
+
 export default function () {
   const buttonPressAudio = new Audio(
     'https://github.com/m-medeiros/FocusTimer2.0/blob/master/assets/sounds/mixkit-modern-technology-select-3124%20(mp3cut.net).wav?raw=true'
@@ -26,6 +36,58 @@ export default function () {
   rainAudio.loop = true
   cafeteriaAudio.loop = true
   fireAudio.loop = true
+
+  volumeSliderSound.addEventListener('input', () => {
+    bgAudio.volume = volumeSliderSound.value / 100
+  })
+
+  volumeSliderForest.addEventListener('input', () => {
+    forestAudio.volume = volumeSliderForest.value / 100
+  })
+
+  volumeSliderFire.addEventListener('input', () => {
+    fireAudio.volume = volumeSliderFire.value / 100
+  })
+
+  volumeSliderRain.addEventListener('input', () => {
+    rainAudio.volume = volumeSliderRain.value / 100
+  })
+
+  volumeSliderCafeteria.addEventListener('input', () => {
+    cafeteriaAudio.volume = volumeSliderCafeteria.value / 100
+  })
+
+  volumeSliderForest.addEventListener('click', () => {
+    if (cardForest.classList.contains('activated')) {
+      cardForest.classList.remove('activated')
+    } else {
+      cardForest.classList.add('activated')
+    }
+  })
+
+  volumeSliderRain.addEventListener('click', () => {
+    if (cardRain.classList.contains('activated')) {
+      cardRain.classList.remove('activated')
+    } else {
+      cardRain.classList.add('activated')
+    }
+  })
+
+  volumeSliderCafeteria.addEventListener('click', () => {
+    if (cardCafeteria.classList.contains('activated')) {
+      cardCafeteria.classList.remove('activated')
+    } else {
+      cardCafeteria.classList.add('activated')
+    }
+  })
+
+  volumeSliderFire.addEventListener('click', () => {
+    if (cardFire.classList.contains('activated')) {
+      cardFire.classList.remove('activated')
+    } else {
+      cardFire.classList.add('activated')
+    }
+  })
 
   function pressButton() {
     buttonPressAudio.play()

@@ -8,11 +8,7 @@ import {
   buttonSet,
   buttonStop,
   minutesDisplay,
-  secondsDisplay,
-  cardForest,
-  cardRain,
-  cardCafeteria,
-  cardFire
+  secondsDisplay
 } from './elements.js'
 
 const controls = Controls({
