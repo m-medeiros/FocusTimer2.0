@@ -22,7 +22,7 @@ export default function () {
     'https://github.com/m-medeiros/FocusTimer2.0/blob/master/assets/sounds/Floresta.wav?raw=true'
   )
   const rainAudio = new Audio(
-    'https://github.com/m-medeiros/FocusTimer2.0/blob/master/assets/sounds/Chuva.wav?raw=true'
+    'https://github.com/m-medeiros/FocusTimer2.0/blob/master/assets/sounds/sounds_heavy-rain.ogg?raw=true'
   )
   const cafeteriaAudio = new Audio(
     'https://github.com/m-medeiros/FocusTimer2.0/blob/master/assets/sounds/Cafeteria.wav?raw=true'
